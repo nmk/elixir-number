@@ -5,11 +5,11 @@ defmodule Numbers.Mixfile do
     [app: :numbers,
      version: "5.2.4",
      elixir: "~> 1.4",
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
+     build_embedded: Mix.env() == :prod,
+     start_permanent: Mix.env() == :prod,
      deps: deps(),
 
-     consolidate_protocols: Mix.env != :test, # Required to see new protocol implementations in the *.exs test helper files.
+     consolidate_protocols: Mix.env() != :test, # Required to see new protocol implementations in the *.exs test helper files.
 
      description: description(),
      package: package()
